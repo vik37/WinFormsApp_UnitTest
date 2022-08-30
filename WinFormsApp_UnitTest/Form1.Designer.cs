@@ -305,10 +305,12 @@ namespace WinFormsApp_UnitTest
             // 
             // usersDropdown
             // 
+            this.usersDropdown.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.usersDropdown.Font = new System.Drawing.Font("Sitka Small", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.usersDropdown.FormattingEnabled = true;
             this.usersDropdown.Location = new System.Drawing.Point(139, 40);
             this.usersDropdown.Name = "usersDropdown";
-            this.usersDropdown.Size = new System.Drawing.Size(206, 32);
+            this.usersDropdown.Size = new System.Drawing.Size(206, 33);
             this.usersDropdown.TabIndex = 0;
             // 
             // Form1
