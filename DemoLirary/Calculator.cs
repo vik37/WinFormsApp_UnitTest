@@ -6,13 +6,13 @@ namespace DemoLirary
 {
     public static class Calculator
     {
-        public static int Add(int a, int b) => a + b;
+        public static double Add(double a, double b) => a + b;
 
-        public static int Sustract(int a, int b) => a - b;
+        public static double Sustract(double a, double b) => a - b;
 
-        public static int Multiply(int a, int b) => a * b;
+        public static double Multiply(double a, double b) => a * b;
 
-        public static int Divide(int a, int b) => b != 0 ? a / b : 0;
+        public static double Divide(double a, double b) => b != 0 ? a / b : 0;
         
         
 

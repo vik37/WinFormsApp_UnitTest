@@ -44,5 +44,43 @@ namespace WinFormsApp_UnitTest
         {
             
         }
+
+        private void addperson_Click(object sender, EventArgs e)
+        {
+            DataAccess.AddNewPerson(new PersonModels { Firstname = firstnameinput.Text, Lastname = lastameinput.Text });
+
+            firstnameinput.Text = "";
+            lastameinput.Text = "";
+
+            UsersDropdown();
+        }
+
+        private void Add_Click(object sender, EventArgs e)
+        {
+            resultText.Text = Calculator.Add((double)first_num.Value, (double)second_num.Value).ToString();
+            first_num.Value = 0;
+            second_num.Value = 0;
+        }
+
+        private void Substract_Click(object sender, EventArgs e)
+        {
+            resultText.Text = Calculator.Sustract((double)first_num.Value, (double)second_num.Value).ToString();
+            first_num.Value = 0;
+            second_num.Value = 0;
+        }
+
+        private void Multiply_Click(object sender, EventArgs e)
+        {
+            resultText.Text = Calculator.Multiply((double)first_num.Value, (double)second_num.Value).ToString();
+            first_num.Value = 0;
+            second_num.Value = 0;
+        }
+
+        private void Divide_Click(object sender, EventArgs e)
+        {
+            resultText.Text = Calculator.Divide((double)first_num.Value, (double)second_num.Value).ToString();
+            first_num.Value = 0;
+            second_num.Value = 0;
+        }
     }
 }

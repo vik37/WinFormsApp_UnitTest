@@ -30,7 +30,7 @@ namespace WinFormsApp_UnitTest
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.result_view = new System.Windows.Forms.ListView();
+            this.resultText = new System.Windows.Forms.TextBox();
             this.Results = new System.Windows.Forms.Label();
             this.Divide = new System.Windows.Forms.Button();
             this.Multiply = new System.Windows.Forms.Button();
@@ -44,8 +44,8 @@ namespace WinFormsApp_UnitTest
             this.addperson = new System.Windows.Forms.Button();
             this.Firstname = new System.Windows.Forms.Label();
             this.Lastname = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lastameinput = new System.Windows.Forms.TextBox();
+            this.firstnameinput = new System.Windows.Forms.TextBox();
             this.Users = new System.Windows.Forms.Label();
             this.usersDropdown = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
@@ -57,7 +57,7 @@ namespace WinFormsApp_UnitTest
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Controls.Add(this.result_view);
+            this.groupBox1.Controls.Add(this.resultText);
             this.groupBox1.Controls.Add(this.Results);
             this.groupBox1.Controls.Add(this.Divide);
             this.groupBox1.Controls.Add(this.Multiply);
@@ -80,16 +80,13 @@ namespace WinFormsApp_UnitTest
             this.groupBox1.Text = "Calculate  Section";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // result_view
+            // resultText
             // 
-            this.result_view.Cursor = System.Windows.Forms.Cursors.No;
-            this.result_view.HideSelection = false;
-            this.result_view.Location = new System.Drawing.Point(156, 202);
-            this.result_view.Name = "result_view";
-            this.result_view.Size = new System.Drawing.Size(144, 38);
-            this.result_view.TabIndex = 9;
-            this.result_view.UseCompatibleStateImageBehavior = false;
-            this.result_view.SelectedIndexChanged += new System.EventHandler(this.result_view_SelectedIndexChanged);
+            this.resultText.Font = new System.Drawing.Font("PMingLiU-ExtB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.resultText.Location = new System.Drawing.Point(165, 189);
+            this.resultText.Name = "resultText";
+            this.resultText.Size = new System.Drawing.Size(135, 31);
+            this.resultText.TabIndex = 9;
             // 
             // Results
             // 
@@ -119,6 +116,7 @@ namespace WinFormsApp_UnitTest
             this.Divide.TabIndex = 7;
             this.Divide.Text = "Divide";
             this.Divide.UseVisualStyleBackColor = false;
+            this.Divide.Click += new System.EventHandler(this.Divide_Click);
             // 
             // Multiply
             // 
@@ -137,6 +135,7 @@ namespace WinFormsApp_UnitTest
             this.Multiply.TabIndex = 6;
             this.Multiply.Text = "Multiply";
             this.Multiply.UseVisualStyleBackColor = false;
+            this.Multiply.Click += new System.EventHandler(this.Multiply_Click);
             // 
             // Substract
             // 
@@ -156,6 +155,7 @@ namespace WinFormsApp_UnitTest
             this.Substract.Text = "Substract";
             this.Substract.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.Substract.UseVisualStyleBackColor = false;
+            this.Substract.Click += new System.EventHandler(this.Substract_Click);
             // 
             // Add
             // 
@@ -174,6 +174,7 @@ namespace WinFormsApp_UnitTest
             this.Add.TabIndex = 4;
             this.Add.Text = "Add";
             this.Add.UseVisualStyleBackColor = false;
+            this.Add.Click += new System.EventHandler(this.Add_Click);
             // 
             // second_num
             // 
@@ -223,8 +224,8 @@ namespace WinFormsApp_UnitTest
             this.groupBox2.Controls.Add(this.addperson);
             this.groupBox2.Controls.Add(this.Firstname);
             this.groupBox2.Controls.Add(this.Lastname);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.lastameinput);
+            this.groupBox2.Controls.Add(this.firstnameinput);
             this.groupBox2.Controls.Add(this.Users);
             this.groupBox2.Controls.Add(this.usersDropdown);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -255,6 +256,7 @@ namespace WinFormsApp_UnitTest
             this.addperson.TabIndex = 7;
             this.addperson.Text = "Add Person";
             this.addperson.UseVisualStyleBackColor = false;
+            this.addperson.Click += new System.EventHandler(this.addperson_Click);
             // 
             // Firstname
             // 
@@ -278,19 +280,21 @@ namespace WinFormsApp_UnitTest
             this.Lastname.TabIndex = 5;
             this.Lastname.Text = "Lastname";
             // 
-            // textBox2
+            // lastameinput
             // 
-            this.textBox2.Location = new System.Drawing.Point(139, 161);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(206, 31);
-            this.textBox2.TabIndex = 3;
+            this.lastameinput.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lastameinput.Location = new System.Drawing.Point(139, 161);
+            this.lastameinput.Name = "lastameinput";
+            this.lastameinput.Size = new System.Drawing.Size(206, 34);
+            this.lastameinput.TabIndex = 3;
             // 
-            // textBox1
+            // firstnameinput
             // 
-            this.textBox1.Location = new System.Drawing.Point(139, 115);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(206, 31);
-            this.textBox1.TabIndex = 2;
+            this.firstnameinput.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.firstnameinput.Location = new System.Drawing.Point(139, 115);
+            this.firstnameinput.Name = "firstnameinput";
+            this.firstnameinput.Size = new System.Drawing.Size(206, 34);
+            this.firstnameinput.TabIndex = 2;
             // 
             // Users
             // 
@@ -305,10 +309,12 @@ namespace WinFormsApp_UnitTest
             // 
             // usersDropdown
             // 
+            this.usersDropdown.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.usersDropdown.Font = new System.Drawing.Font("Sitka Small", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.usersDropdown.FormattingEnabled = true;
             this.usersDropdown.Location = new System.Drawing.Point(139, 40);
             this.usersDropdown.Name = "usersDropdown";
-            this.usersDropdown.Size = new System.Drawing.Size(206, 32);
+            this.usersDropdown.Size = new System.Drawing.Size(206, 33);
             this.usersDropdown.TabIndex = 0;
             // 
             // Form1
@@ -342,14 +348,14 @@ namespace WinFormsApp_UnitTest
         private System.Windows.Forms.Button Divide;
         private System.Windows.Forms.Button Multiply;
         private System.Windows.Forms.Button Substract;
-        private System.Windows.Forms.ListView result_view;
         private System.Windows.Forms.Label Results;
         private System.Windows.Forms.Button addperson;
         private System.Windows.Forms.Label Firstname;
         private System.Windows.Forms.Label Lastname;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox lastameinput;
+        private System.Windows.Forms.TextBox firstnameinput;
         private System.Windows.Forms.Label Users;
         private System.Windows.Forms.ComboBox usersDropdown;
+        private System.Windows.Forms.TextBox resultText;
     }
 }
