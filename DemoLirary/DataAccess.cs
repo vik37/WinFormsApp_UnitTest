@@ -43,14 +43,23 @@ namespace DemoLirary
         }
         public static List<PersonModels> GetAll()
         {
-            List<PersonModels> output = new List<PersonModels>();
-            string[] content = File.ReadAllLines(personTextFile);
-            foreach(string line in content)
+            try
             {
-                string[] data = line.Split(',');
-                output.Add(new PersonModels { Firstname = data[0], Lastname = data[1] });
+                List<PersonModels> output = new List<PersonModels>();
+                string[] content = File.ReadAllLines(personTextFile);
+                foreach (string line in content)
+                {
+                    string[] data = line.Split(',');
+                    output.Add(new PersonModels { Firstname = data[0], Lastname = data[1] });
+                }
+                return output;
             }
-            return output;
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+            
         }
     }
 }
