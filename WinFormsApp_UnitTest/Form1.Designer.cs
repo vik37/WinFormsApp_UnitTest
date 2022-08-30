@@ -30,15 +30,15 @@ namespace WinFormsApp_UnitTest
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.result_view = new System.Windows.Forms.ListView();
             this.Results = new System.Windows.Forms.Label();
             this.Divide = new System.Windows.Forms.Button();
             this.Multiply = new System.Windows.Forms.Button();
             this.Substract = new System.Windows.Forms.Button();
             this.Add = new System.Windows.Forms.Button();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.second_num = new System.Windows.Forms.NumericUpDown();
             this.SecodNumber = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.first_num = new System.Windows.Forms.NumericUpDown();
             this.FirstNumber = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.addperson = new System.Windows.Forms.Button();
@@ -47,25 +47,25 @@ namespace WinFormsApp_UnitTest
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.Users = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.usersDropdown = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.second_num)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.first_num)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Controls.Add(this.listView1);
+            this.groupBox1.Controls.Add(this.result_view);
             this.groupBox1.Controls.Add(this.Results);
             this.groupBox1.Controls.Add(this.Divide);
             this.groupBox1.Controls.Add(this.Multiply);
             this.groupBox1.Controls.Add(this.Substract);
             this.groupBox1.Controls.Add(this.Add);
-            this.groupBox1.Controls.Add(this.numericUpDown2);
+            this.groupBox1.Controls.Add(this.second_num);
             this.groupBox1.Controls.Add(this.SecodNumber);
-            this.groupBox1.Controls.Add(this.numericUpDown1);
+            this.groupBox1.Controls.Add(this.first_num);
             this.groupBox1.Controls.Add(this.FirstNumber);
             this.groupBox1.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
@@ -80,15 +80,16 @@ namespace WinFormsApp_UnitTest
             this.groupBox1.Text = "Calculate  Section";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // listView1
+            // result_view
             // 
-            this.listView1.Cursor = System.Windows.Forms.Cursors.No;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(156, 202);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(144, 38);
-            this.listView1.TabIndex = 9;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.result_view.Cursor = System.Windows.Forms.Cursors.No;
+            this.result_view.HideSelection = false;
+            this.result_view.Location = new System.Drawing.Point(156, 202);
+            this.result_view.Name = "result_view";
+            this.result_view.Size = new System.Drawing.Size(144, 38);
+            this.result_view.TabIndex = 9;
+            this.result_view.UseCompatibleStateImageBehavior = false;
+            this.result_view.SelectedIndexChanged += new System.EventHandler(this.result_view_SelectedIndexChanged);
             // 
             // Results
             // 
@@ -174,13 +175,13 @@ namespace WinFormsApp_UnitTest
             this.Add.Text = "Add";
             this.Add.UseVisualStyleBackColor = false;
             // 
-            // numericUpDown2
+            // second_num
             // 
-            this.numericUpDown2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.numericUpDown2.Location = new System.Drawing.Point(189, 83);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(111, 27);
-            this.numericUpDown2.TabIndex = 3;
+            this.second_num.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.second_num.Location = new System.Drawing.Point(189, 83);
+            this.second_num.Name = "second_num";
+            this.second_num.Size = new System.Drawing.Size(111, 27);
+            this.second_num.TabIndex = 3;
             // 
             // SecodNumber
             // 
@@ -196,13 +197,13 @@ namespace WinFormsApp_UnitTest
             this.SecodNumber.Text = "Second Number";
             this.SecodNumber.Click += new System.EventHandler(this.label1_Click);
             // 
-            // numericUpDown1
+            // first_num
             // 
-            this.numericUpDown1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.numericUpDown1.Location = new System.Drawing.Point(189, 40);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(111, 27);
-            this.numericUpDown1.TabIndex = 1;
+            this.first_num.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.first_num.Location = new System.Drawing.Point(189, 40);
+            this.first_num.Name = "first_num";
+            this.first_num.Size = new System.Drawing.Size(111, 27);
+            this.first_num.TabIndex = 1;
             // 
             // FirstNumber
             // 
@@ -225,7 +226,7 @@ namespace WinFormsApp_UnitTest
             this.groupBox2.Controls.Add(this.textBox2);
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.Users);
-            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.usersDropdown);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.WindowFrame;
@@ -302,13 +303,13 @@ namespace WinFormsApp_UnitTest
             this.Users.TabIndex = 1;
             this.Users.Text = "Users";
             // 
-            // comboBox1
+            // usersDropdown
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(139, 40);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(206, 32);
-            this.comboBox1.TabIndex = 0;
+            this.usersDropdown.FormattingEnabled = true;
+            this.usersDropdown.Location = new System.Drawing.Point(139, 40);
+            this.usersDropdown.Name = "usersDropdown";
+            this.usersDropdown.Size = new System.Drawing.Size(206, 32);
+            this.usersDropdown.TabIndex = 0;
             // 
             // Form1
             // 
@@ -321,8 +322,8 @@ namespace WinFormsApp_UnitTest
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.second_num)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.first_num)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -334,14 +335,14 @@ namespace WinFormsApp_UnitTest
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label SecodNumber;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown first_num;
         private System.Windows.Forms.Label FirstNumber;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown second_num;
         private System.Windows.Forms.Button Add;
         private System.Windows.Forms.Button Divide;
         private System.Windows.Forms.Button Multiply;
         private System.Windows.Forms.Button Substract;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView result_view;
         private System.Windows.Forms.Label Results;
         private System.Windows.Forms.Button addperson;
         private System.Windows.Forms.Label Firstname;
@@ -349,6 +350,6 @@ namespace WinFormsApp_UnitTest
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label Users;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox usersDropdown;
     }
 }
