@@ -37,7 +37,7 @@ namespace DemoLirary
             List<string> output = new List<string>();
             foreach (PersonModels person in people)
             {
-                output.Add($"{person.Firstname} {person.Lastname}");
+                output.Add($"{person.Firstname},{person.Lastname}");
             }
             return output;
         }
