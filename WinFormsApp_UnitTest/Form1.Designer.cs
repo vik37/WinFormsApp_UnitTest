@@ -40,7 +40,8 @@ namespace WinFormsApp_UnitTest
             this.SecodNumber = new System.Windows.Forms.Label();
             this.first_num = new System.Windows.Forms.NumericUpDown();
             this.FirstNumber = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.Database_Section = new System.Windows.Forms.GroupBox();
+            this.dbSection_errormsg = new System.Windows.Forms.Label();
             this.addperson = new System.Windows.Forms.Button();
             this.Firstname = new System.Windows.Forms.Label();
             this.Lastname = new System.Windows.Forms.Label();
@@ -51,7 +52,7 @@ namespace WinFormsApp_UnitTest
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.second_num)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.first_num)).BeginInit();
-            this.groupBox2.SuspendLayout();
+            this.Database_Section.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -74,7 +75,7 @@ namespace WinFormsApp_UnitTest
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(0);
             this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.groupBox1.Size = new System.Drawing.Size(313, 319);
+            this.groupBox1.Size = new System.Drawing.Size(354, 360);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Calculate  Section";
@@ -83,7 +84,7 @@ namespace WinFormsApp_UnitTest
             // resultText
             // 
             this.resultText.Font = new System.Drawing.Font("PMingLiU-ExtB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.resultText.Location = new System.Drawing.Point(165, 189);
+            this.resultText.Location = new System.Drawing.Point(189, 189);
             this.resultText.Name = "resultText";
             this.resultText.Size = new System.Drawing.Size(135, 31);
             this.resultText.TabIndex = 9;
@@ -93,7 +94,7 @@ namespace WinFormsApp_UnitTest
             this.Results.AutoSize = true;
             this.Results.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Results.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.Results.Location = new System.Drawing.Point(189, 161);
+            this.Results.Location = new System.Drawing.Point(252, 161);
             this.Results.Name = "Results";
             this.Results.Size = new System.Drawing.Size(72, 25);
             this.Results.TabIndex = 8;
@@ -179,7 +180,7 @@ namespace WinFormsApp_UnitTest
             // second_num
             // 
             this.second_num.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.second_num.Location = new System.Drawing.Point(189, 83);
+            this.second_num.Location = new System.Drawing.Point(213, 83);
             this.second_num.Name = "second_num";
             this.second_num.Size = new System.Drawing.Size(111, 27);
             this.second_num.TabIndex = 3;
@@ -201,7 +202,7 @@ namespace WinFormsApp_UnitTest
             // first_num
             // 
             this.first_num.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.first_num.Location = new System.Drawing.Point(189, 40);
+            this.first_num.Location = new System.Drawing.Point(213, 40);
             this.first_num.Name = "first_num";
             this.first_num.Size = new System.Drawing.Size(111, 27);
             this.first_num.TabIndex = 1;
@@ -219,25 +220,37 @@ namespace WinFormsApp_UnitTest
             this.FirstNumber.TabIndex = 0;
             this.FirstNumber.Text = "First Number";
             // 
-            // groupBox2
+            // Database_Section
             // 
-            this.groupBox2.Controls.Add(this.addperson);
-            this.groupBox2.Controls.Add(this.Firstname);
-            this.groupBox2.Controls.Add(this.Lastname);
-            this.groupBox2.Controls.Add(this.lastameinput);
-            this.groupBox2.Controls.Add(this.firstnameinput);
-            this.groupBox2.Controls.Add(this.Users);
-            this.groupBox2.Controls.Add(this.usersDropdown);
-            this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox2.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox2.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.groupBox2.Location = new System.Drawing.Point(624, 20);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.groupBox2.Size = new System.Drawing.Size(363, 319);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.Database_Section.Controls.Add(this.dbSection_errormsg);
+            this.Database_Section.Controls.Add(this.addperson);
+            this.Database_Section.Controls.Add(this.Firstname);
+            this.Database_Section.Controls.Add(this.Lastname);
+            this.Database_Section.Controls.Add(this.lastameinput);
+            this.Database_Section.Controls.Add(this.firstnameinput);
+            this.Database_Section.Controls.Add(this.Users);
+            this.Database_Section.Controls.Add(this.usersDropdown);
+            this.Database_Section.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Database_Section.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Database_Section.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.Database_Section.Location = new System.Drawing.Point(624, 20);
+            this.Database_Section.Name = "Database_Section";
+            this.Database_Section.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Database_Section.Size = new System.Drawing.Size(473, 319);
+            this.Database_Section.TabIndex = 1;
+            this.Database_Section.TabStop = false;
+            this.Database_Section.Text = "Database Section";
+            // 
+            // dbSection_errormsg
+            // 
+            this.dbSection_errormsg.AutoSize = true;
+            this.dbSection_errormsg.Font = new System.Drawing.Font("Candara Light", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.dbSection_errormsg.ForeColor = System.Drawing.Color.Red;
+            this.dbSection_errormsg.Location = new System.Drawing.Point(6, 202);
+            this.dbSection_errormsg.Name = "dbSection_errormsg";
+            this.dbSection_errormsg.Size = new System.Drawing.Size(178, 18);
+            this.dbSection_errormsg.TabIndex = 11;
+            this.dbSection_errormsg.Text = "database error message";
             // 
             // addperson
             // 
@@ -322,7 +335,7 @@ namespace WinFormsApp_UnitTest
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1256, 450);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.Database_Section);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -330,8 +343,8 @@ namespace WinFormsApp_UnitTest
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.second_num)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.first_num)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.Database_Section.ResumeLayout(false);
+            this.Database_Section.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -339,7 +352,7 @@ namespace WinFormsApp_UnitTest
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox Database_Section;
         private System.Windows.Forms.Label SecodNumber;
         private System.Windows.Forms.NumericUpDown first_num;
         private System.Windows.Forms.Label FirstNumber;
@@ -357,5 +370,6 @@ namespace WinFormsApp_UnitTest
         private System.Windows.Forms.Label Users;
         private System.Windows.Forms.ComboBox usersDropdown;
         private System.Windows.Forms.TextBox resultText;
+        private System.Windows.Forms.Label dbSection_errormsg;
     }
 }

@@ -19,15 +19,30 @@ namespace WinFormsApp_UnitTest
         {
             InitializeComponent();
 
+            InitValues();
+
             UsersDropdown();
+        }
+
+        private void InitValues()
+        {
+            dbSection_errormsg.Text = "";
         }
 
         private void UsersDropdown()
         {
-            people = DataAccess.GetAll();
-            usersDropdown.DataSource = null;
-            usersDropdown.DataSource = people;
-            usersDropdown.DisplayMember = "Fullname";
+            try
+            {
+                people = DataAccess.GetAll();
+                usersDropdown.DataSource = null;
+                usersDropdown.DataSource = people;
+                usersDropdown.DisplayMember = "Fullname";
+            }
+            catch (Exception ex)
+            {
+                dbSection_errormsg.Text = ex.Message;
+            }
+            
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -47,12 +62,24 @@ namespace WinFormsApp_UnitTest
 
         private void addperson_Click(object sender, EventArgs e)
         {
-            DataAccess.AddNewPerson(new PersonModels { Firstname = firstnameinput.Text, Lastname = lastameinput.Text });
+            try
+            {
+                DataAccess.AddNewPerson(new PersonModels { Firstname = firstnameinput.Text, Lastname = lastameinput.Text });
 
-            firstnameinput.Text = "";
-            lastameinput.Text = "";
+                firstnameinput.Text = "";
+                lastameinput.Text = "";
 
-            UsersDropdown();
+                UsersDropdown();
+            }
+            catch(ArgumentException ex)
+            {
+                dbSection_errormsg.Text = ex.Message;
+            }
+            catch (Exception)
+            {
+                dbSection_errormsg.Text = "Sommething wrong in the server. Please try leater.";
+            }
+            
         }
 
         private void Add_Click(object sender, EventArgs e)
@@ -60,6 +87,7 @@ namespace WinFormsApp_UnitTest
             resultText.Text = Calculator.Add((double)first_num.Value, (double)second_num.Value).ToString();
             first_num.Value = 0;
             second_num.Value = 0;
+            
         }
 
         private void Substract_Click(object sender, EventArgs e)
