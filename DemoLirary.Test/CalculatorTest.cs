@@ -39,5 +39,14 @@ namespace DemoLirary.Test
 
             Assert.Equal(expected, actual);
         }
+        [Fact]
+        public static void Devide_DevideyZero()
+        {
+            double expected = 0;
+
+            double actual = Calculator.Divide(12, 0);
+
+            Assert.Equal(expected, actual);
+        }
     }
 }
