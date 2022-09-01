@@ -43,7 +43,8 @@ namespace DemoLirary.Test
             List<string> actual = DataAccess.ConvertToCsv(people);
 
             Assert.Equal(expected, actual);
-            Assert.True(actual.Count > 0);           
+            Assert.True(actual.Count > 0);
+            Assert.Contains(actual, a => a.Contains(','));
         }
     }
 }
