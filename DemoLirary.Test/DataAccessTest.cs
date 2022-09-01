@@ -29,5 +29,21 @@ namespace DemoLirary.Test
 
             Assert.Throws<ArgumentException>(param, () => DataAccess.AddPersonToPeopleList(people, newPerson));
         }
+        [Fact]
+        public void ConvertToCsv_ShouldConvertToCSVString()
+        {
+            List<string> expected = new List<string> { "Zafir,Hadjimanov", "Goce,Delcev" };
+
+            List<PersonModels> people = new List<PersonModels>
+            {
+                new PersonModels{Firstname="Zafir",Lastname="Hadjimanov"},
+                new PersonModels{Firstname="Goce",Lastname="Delcev"}
+            };
+
+            List<string> actual = DataAccess.ConvertToCsv(people);
+
+            Assert.Equal(expected, actual);
+            Assert.True(actual.Count > 0);           
+        }
     }
 }
