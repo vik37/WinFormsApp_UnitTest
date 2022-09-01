@@ -22,13 +22,13 @@ namespace DemoLirary
 
         public static void AddPersonToPeopleList(List<PersonModels> people, PersonModels person)
         {
-            if (string.IsNullOrEmpty(person.Firstname))
+            if (string.IsNullOrWhiteSpace(person.Firstname))
             {
-                throw new ArgumentException("You passed in an invalid parameter", "FirstName");
+                throw new ArgumentException("You passed in an invalid parameter", "Firstname");
             }
-            if (string.IsNullOrEmpty(person.Lastname))
+            if (string.IsNullOrWhiteSpace(person.Lastname))
             {
-                throw new ArgumentException("You passed in an invalid parameter", "LastName");
+                throw new ArgumentException("You passed in an invalid parameter", "Lastname");
             }
             people.Add(person);
         }

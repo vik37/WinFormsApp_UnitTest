@@ -19,7 +19,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DemoLirary\DemoLirary.csproj" />
-    <ProjectReference Include="..\WinFormsApp_UnitTest\WinFormsApp_UnitTest.csproj" />
   </ItemGroup>
 
   <ItemGroup>
